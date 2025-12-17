@@ -1,10 +1,6 @@
 def call() {
     dir('backend') {
-        sh """
-        dependency-check.sh \
-        --project ${env.JOB_NAME}-backend \
-        --scan . \
-        --format HTML
-        """
+        dependencyCheck additionalArguments: '--scan .', odcInstallation: 'dp'
+        dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
     }
 }
