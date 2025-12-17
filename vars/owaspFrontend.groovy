@@ -1,5 +1,6 @@
 def call() {
-    sh """
-    dependency-check.sh     --project ${env.JOB_NAME}-frontend     --scan .     --format HTML
-    """
+    dir('frontend') {
+        dependencyCheck additionalArguments: '--scan .', odcInstallation: 'dp'
+        dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+    }
 }
