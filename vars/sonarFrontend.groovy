@@ -9,7 +9,7 @@ def call() {
             -Dsonar.projectKey=${env.JOB_NAME}-frontend \
             -Dsonar.projectName=${env.JOB_NAME}-frontend \
             -Dsonar.host.url=http://localhost:9001 \
-            -Dsonar.sources=src \
+            -Dsonar.sources=. \
             -Dsonar.token=$SONAR_TOKEN
             """
         }
