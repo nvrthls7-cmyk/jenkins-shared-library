@@ -1,3 +1,5 @@
 def call() {
-    sh 'mvn clean package -DskipTests'
+    dir('backend') {
+        sh 'mvn clean package -DskipTests'
+    }
 }
