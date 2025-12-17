@@ -8,7 +8,7 @@ def call() {
             ${scannerHome}/bin/sonar-scanner \
             -Dsonar.projectKey=${env.JOB_NAME}-backend \
             -Dsonar.projectName=${env.JOB_NAME}-backend \
-            -Dsonar.host.url=http://sonarqube:9001 \
+            -Dsonar.host.url=http://localhost:9001 \
             -Dsonar.java.binaries=target \
             -Dsonar.token=$SONAR_TOKEN
             """
